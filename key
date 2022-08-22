@@ -1,0 +1,16 @@
+local RS = game:GetService("RunService")
+
+local function waitForChildOfClass(inst, class, dur)
+    local timeOut = false; task.spawn(function() task.wait(dur or 5); timeOut = true end)
+    
+    repeat RS.RenderStepped:Wait() until inst:FindFirstChildOfClass(class) or timeOut
+    return inst:FindFirstChildOfClass(class)
+end
+
+workspace.DescendantAdded:Connect(function(d)
+    task.wait()
+
+    if d.Name == "Hitbox" and itemESPToggle == true and waitForChildOfClass(d.Parent, "ProximityPrompt", 1) then
+        ESP:Add(d, { name = d.Parent.Name, color = Color3.new(255, 255, 0) })
+    end
+end)
