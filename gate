@@ -1,0 +1,7 @@
+game:GetService("Workspace").CurrentRooms.ChildAdded:connect(function(v)
+for _, v in next, workspace.CurrentRooms:GetDescendants() do
+    if v:FindFirstChild("Main") and string.find(v:GetFullName(), "LeverForGate") then
+        warn(v) ESP:Add(v.Main, {name = "Lever for gate", color = Color3.fromRGB(0,255,0)})
+    end
+end
+end)
