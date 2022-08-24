@@ -5,5 +5,3 @@ for _, v in next, workspace.CurrentRooms:GetDescendants() do
           ESP:Add(v.Torso, {name = "Monster", color = Color3.fromRGB(255,0,0)})
     end
 end
-else 
-ESP:Remove(v.Torso, {name = "Monster", color = Color3.fromRGB(255,0,0)})
