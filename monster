@@ -1,0 +1,9 @@
+local ESP = loadstring(game:HttpGet("https://pastebin.com/raw/2tnXa8tZ", true))()
+
+for _, v in next, workspace.CurrentRooms:GetDescendants() do
+    if v:FindFirstChild("Torso") and string.find(v:GetFullName(), "FigureRagdoll") then
+          ESP:Add(v.Torso, {name = "Monster", color = Color3.fromRGB(255,0,0)})
+    end
+end
+else 
+ESP:Remove(v.Torso, {name = "Monster", color = Color3.fromRGB(255,0,0)})
