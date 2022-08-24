@@ -1,6 +1,8 @@
 local ESP = loadstring(game:HttpGet("https://pastebin.com/raw/2tnXa8tZ", true))()
 
+game:GetService("Workspace").CurrentRooms.ChildAdded:connect(function(v)
 workspace.DescendantAdded:Connect(function(d)
     if d.Name == "Core" and string.find(d:GetFullName(), "Lookman") then
          ESP:Add(d.Core, {name = "Eye", color = Color3.fromRGB(0,0,255)})
     end
+end)
