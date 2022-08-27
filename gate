@@ -4,7 +4,7 @@ local ESP = loadstring(game:HttpGet("https://pastebin.com/raw/2tnXa8tZ", true))(
 game:GetService("Workspace").CurrentRooms.ChildAdded:connect(function(v)
 for _, v in next, workspace.CurrentRooms:GetDescendants() do
     if v:FindFirstChild("Main") and string.find(v:GetFullName(), "LeverForGate") then
-        ESP:Add(v.Main, {name = "Lever for gate", color = Color3.fromRGB(0,255,0)})
+        ESP:Add(v.Main, {name = "Lever for gate", color = Color3.fromRGB(0,0,255)})
     end
 end
 end)
